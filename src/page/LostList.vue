@@ -1,5 +1,8 @@
 <template>
   <div class="page-lost-list">
+    <div class="op-bar">
+      <el-button type="primary" @click="dialogFormVisible = true">发布捡到物品</el-button>
+    </div>
     <h1>捡到的物品列表</h1>
     <div class="list-con">
       <el-table
@@ -38,13 +41,29 @@
         </el-table-column>
       </el-table>
     </div>
+    <el-dialog title="发布捡到物品" :visible.sync="dialogFormVisible">
+      <publish-lost @submit="submit"></publish-lost>
+    </el-dialog>
   </div>
 </template>
 
 <script>
+
+  import PublishLost from '@/component/PublishLost.vue';
+
   export default {
 
     name: 'page-lost-list',
+
+    components: {
+      PublishLost
+    },
+
+    data(){
+      return {
+        dialogFormVisible: false
+      };
+    },
 
     created(){
       this.$store.commit('setLostList', []);
@@ -53,6 +72,31 @@
 
     methods: {
 
+      submit(data){
+        if( this.$store.state.isLoading ){
+          return;
+        }
+
+        this.$store.dispatch('publishLost', data).then( (out) => {
+          this.dialogFormVisible = false;
+          this.$message({
+            message: '提交数据成功，请稍后刷新',
+            type: 'success'
+          });
+        }).catch( (err) => {
+          console.error(err);
+          this.$message.error('提交失败');
+        });
+      }
     }
   };
 </script>
+
+<style lang="scss" scoped="">
+  .page-lost-list{
+
+    .op-bar{
+      margin: 25px auto;
+    }
+  }
+</style>

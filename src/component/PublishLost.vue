@@ -1,6 +1,6 @@
 <template>
   <div class="page-publish-lost">
-    <h1>发布捡到的物品</h1>
+    <!--<h1>发布捡到的物品</h1>-->
     <div class="form-con">
       <el-form ref="form" label-width="80px">
         <el-form-item label="物品名">
@@ -50,12 +50,45 @@
 
       submit(){
 
+        let title = this.title.trim();
+        let desc = this.desc.trim();
+        let location = this.location.trim();
+        let contact = this.contact.trim();
+
+        if( ! title ){
+          return this.$message({
+            message: '物品名称必填',
+            type: 'warning'
+          })
+        }
+
+        if( ! desc ){
+          return this.$message({
+            message: '描述信息必填',
+            type: 'warning'
+          })
+        }
+
+        if( ! location ){
+          return this.$message({
+            message: '地点必填',
+            type: 'warning'
+          })
+        }
+
+        if( ! contact ){
+          return this.$message({
+            message: '联系方式必填',
+            type: 'warning'
+          })
+        }
+
         this.$emit('submit', {
-          title: this.title,
-          desc: this.desc,
+          title: title,
+          desc: desc,
           time: this.time.getTime(),
-          location: this.location,
-          contact: this.contact
+          location: location,
+          contact: contact
         });
       }
     }
@@ -64,7 +97,7 @@
 
 <style lang="scss" scoped="">
   .page-publish-lost{
-    width: 800px;
-    margin: 50px auto;
+    /*width: 800px;*/
+    /*margin: 50px auto;*/
   }
 </style>

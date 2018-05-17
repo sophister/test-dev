@@ -43,7 +43,12 @@ export function call(data){
     nebPay.call(contractAddress, '0', callFunction, callArgs, {
       listener: function(out){
         console.log(`call [${callFunction}] 返回结果：`, out);
-        resolve(out);
+
+        if( typeof out === 'string' && out.indexOf('Error:') === 0){
+          reject( new Error(out));
+        }else{
+          resolve(out);
+        }
         // if(out.result){
         //   resolve(out.result);
         // }else{

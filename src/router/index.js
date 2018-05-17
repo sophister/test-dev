@@ -10,22 +10,22 @@ Vue.use(Router);
 
 export default new Router({
   routes: [
-    {
-      path: '/publishLost',
-      name: 'PublishLost',
-      component: PublishLost,
-    },
+    // {
+    //   path: '/publishLost',
+    //   name: 'PublishLost',
+    //   component: PublishLost,
+    // },
     {
       path: '/lostList',
       name: 'LostList',
       component: LostList,
       alias: '/',
     },
-    {
-      path: '/publishReward',
-      name: 'PublishReward',
-      component: PublishReward,
-    },
+    // {
+    //   path: '/publishReward',
+    //   name: 'PublishReward',
+    //   component: PublishReward,
+    // },
     {
       path: '/rewardList',
       name: 'RewardList',
