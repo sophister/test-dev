@@ -121,6 +121,8 @@
     methods: {
 
       refreshData(){
+        this.$store.commit('setMyLostList', []);
+        this.$store.commit('setMyRewardList', []);
         this.$store.dispatch('fetchMyList');
       },
 

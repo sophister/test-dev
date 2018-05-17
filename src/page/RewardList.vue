@@ -51,6 +51,7 @@
     name: 'page-reward-list',
 
     created(){
+      this.$store.commit('setRewardList', []);
       this.$store.dispatch('fetchRewardList');
     },
 

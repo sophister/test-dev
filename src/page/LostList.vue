@@ -47,6 +47,7 @@
     name: 'page-lost-list',
 
     created(){
+      this.$store.commit('setLostList', []);
       this.$store.dispatch('fetchLostList');
     },
 
