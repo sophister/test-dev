@@ -8,12 +8,13 @@
 import NebPay from 'nebpay.js';
 
 
-let contractAddress = '';
+let contractAddress = 'n1jdGw5xciE4nUuJRgxsCcEHGe8syBDPEeL';
 
 if( process.env.NODE_ENV !== 'production'){
   contractAddress = 'n1nYaGnyaer5GqAHXkRf86e7KEXAczh3KeW';
 }
 
+console.log(`contract addr: ${contractAddress}`);
 
 const nebPay = new NebPay();
 
