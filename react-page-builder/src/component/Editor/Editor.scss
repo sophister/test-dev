@@ -1,0 +1,15 @@
+.page-editor{
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  height: 100vh;
+
+  .page-canvas{
+    flex: 1;
+  }
+
+  .side-bar{
+    width: 300px;
+    border-left: 1px solid #bbb;
+  }
+}
