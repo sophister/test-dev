@@ -12,7 +12,7 @@ import componentFactory from './ComponentFactory.js';
 const builderStore = new BuilderStore();
 
 
-export {
+export default {
   builderStore,
   componentFactory,
 };

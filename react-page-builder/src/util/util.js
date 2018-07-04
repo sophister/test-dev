@@ -13,6 +13,6 @@ function generateComponentId(){
 
 
 
-export {
+export default {
   generateComponentId,
 };

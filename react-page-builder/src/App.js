@@ -31,7 +31,7 @@ import Editor2 from './editor2/Editor.js';
 class App extends Component {
   render() {
     return (
-      <Provider store={ store }>
+      <Provider componentFactory={ store.componentFactory } builderStore={ store.builderStore } >
         <div className="App">
           <Editor2 />
         </div>

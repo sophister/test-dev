@@ -8,7 +8,7 @@
 import React, { Component } from 'react';
 
 import ComponentList from './ComponentList.js';
-import Wrapper from './Wrapper.js';
+import EditorCanvas from './EditorCanvas.js';
 
 export default class Editor extends Component{
 
@@ -16,7 +16,7 @@ export default class Editor extends Component{
     return (
       <div className="editor-2">
         <ComponentList/>
-
+        <EditorCanvas/>
       </div>
     );
   }

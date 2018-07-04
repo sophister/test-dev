@@ -9,6 +9,8 @@ import React, { Component } from 'react';
 import * as Sortable from 'sortablejs';
 import {observer, inject} from "mobx-react";
 
+import './ComponentList.css';
+
 
 @inject('componentFactory')
 export default class ComponentList extends Component{
